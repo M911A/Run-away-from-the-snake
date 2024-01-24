@@ -26,14 +26,11 @@ public class GetOut {
 
     public static void main(String[] args) {
         GetOut run = new GetOut(); 
-
         run.main();
-
     }
 
     private void main() {
         boolean isGameActive = true;
-    
         init();
         printPlayField();
         do {
@@ -183,14 +180,12 @@ public class GetOut {
             moveY = false;
         }
         
-        // Überprüfung, ob die Schlange auf den Coin, die Tür oder den Spieler trifft
         if ((xCoin == xSnake && yCoin == ySnake) || (xDoor == xSnake && yDoor == ySnake) || (xPlayer == xSnake && yPlayer == ySnake)) {
             clearConsole();
             System.out.println(RED + "Game Over! Du wurdest von der Schlange gefressen!" + RESET);
             System.exit(0);  // Beendet das Programm
         }
         
-        // Schlange kann nicht auf Coin, Tür oder Spieler gehen
         playField[prevY][prevX] = " .. ";
         playField[ySnake][xSnake] = snake;
     }
